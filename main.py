@@ -35,6 +35,11 @@ def main():
             
         for updatable in updatable_group:
             updatable.update(dt)
+
+        for asteroid in asteroids_group:
+            if asteroid.collision(player):
+                print("Game Over!")
+                exit()
  
         screen.fill("black")
         
